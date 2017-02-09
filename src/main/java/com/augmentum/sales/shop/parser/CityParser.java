@@ -34,13 +34,9 @@ public class CityParser {
                 for (int i= 0; i <children.length; i++) {
                 	if (children[i].getName().equalsIgnoreCase("a")) {
                 		String href = children[i].getAttributeByName("href");
-                		cityUrl.add(href);                		
-                		ShopParser shopParser = new ShopParser();
-                		shopParser.parseShop(href);
+                		cityUrl.add(href);                		                		
                 	}
-                }
-                Map atts= divElement.getAttributes();
-                System.out.println("t");
+                }                               
             }
 			
 		} catch (MalformedURLException e) {

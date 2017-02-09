@@ -23,8 +23,11 @@ public class ShopApp {
 		Set<String> cities = cityParser.getCityUrl(url);
 		List<String> shops =  new ArrayList<String>();
 		cities.forEach(city ->{
-			ShopParser shopParser = new ShopParser();
-			shops.addAll(shopParser.parseShop(city));
+			if (null != city) {						
+				System.out.println("city url" + city);
+				ShopParser shopParser = new ShopParser();
+				shops.addAll(shopParser.parseShop(city));
+			}
 		});
 		
 		shops.forEach(shop-> {

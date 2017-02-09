@@ -36,12 +36,9 @@ public class ShopParser {
 				}
 			}
 
-		} catch (MalformedURLException e) {
-			logger.error(e.toString());
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			logger.error(e.toString());
-		}
+		} catch (Exception e) {
+			logger.error("exception" , e);
+		} 
 
 		return shops;
 
