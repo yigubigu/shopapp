@@ -23,9 +23,9 @@ public class HtmlParser {
         rootNode = cleaner.clean(htmlPage);
     }
 
-    List getDivsByClass(String CSSClassname)
+    public List<TagNode> getDivsByClass(String CSSClassname)
     {
-        List divList = new ArrayList();
+        List<TagNode> divList = new ArrayList<TagNode>();
 
         TagNode divElements[] = rootNode.getElementsByName("div", true);
         for (int i = 0; divElements != null && i < divElements.length; i++)
@@ -38,5 +38,23 @@ public class HtmlParser {
         }
         return divList;
     }
+    
+    public List<TagNode> getElementByClass(String elementName, String CSSClassname)
+    {
+        List<TagNode> divList = new ArrayList<TagNode>();
+
+        TagNode divElements[] = rootNode.getElementsByName(elementName, true);
+        for (int i = 0; divElements != null && i < divElements.length; i++)
+        {
+            String classType = divElements[i].getAttributeByName("class");
+            if (classType != null && classType.equals(CSSClassname))
+            {
+                divList.add(divElements[i]);
+            }
+        }
+        return divList;
+    }
+
+    
 
 }
