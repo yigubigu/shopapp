@@ -69,7 +69,7 @@ public class ShopAppTests {
 		 HtmlCleaner cleaner = new HtmlCleaner();
 		 TagNode root = null;
 		try {
-			root = cleaner.clean(new URL(url3));
+			root = cleaner.clean(new URL(url2));
 			List nodes = root.getElementListByName("A", true);
 			 
 			 nodes.forEach(item ->{
