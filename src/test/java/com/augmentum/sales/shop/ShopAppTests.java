@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -92,12 +93,20 @@ public class ShopAppTests {
 			e.printStackTrace();
 		}
 		
+		Set<String> productNames = new HashSet<String>();
+		
 		productUrls.forEach(item ->{
 			String productName = productName(item);
 			if (productName != null) {
-			   System.out.println(productName);
+				productNames.add(productName);
 			}
 		});
+		
+		productNames.forEach(item->{
+			System.out.println(item);
+		});
+		
+		
 	}
 
 	private String productName(String url) {
