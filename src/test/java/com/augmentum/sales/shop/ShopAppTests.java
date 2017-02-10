@@ -96,6 +96,12 @@ public class ShopAppTests {
 		Set<String> productNames = new HashSet<String>();
 		
 		productUrls.forEach(item ->{
+			try {
+				Thread.sleep(3* 1000);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			String productName = productName(item);
 			if (productName != null) {
 				productNames.add(productName);
