@@ -31,8 +31,9 @@ public class ShopAppTests {
 			XPatherException {
 
 		HtmlCleaner cleaner = new HtmlCleaner();
-		String url = "https://www.amazon.com/gp/search/ref=sr_nr_p_n_feature_three_br_1/ref=s9_acss_bw_cts_wdnmvd1_T1_w?fst=as:off&rh=n:7141123011,n:7147440011,n:1040660,n:1048188,p_6:ATVPDKIKX0DER,p_n_feature_three_browse-bin:2359303011|2359301011&bbn=1048188&ie=UTF8&qid=1469216114&rnid=2359299011&pf_rd_m=ATVPDKIKX0DER&pf_rd_s=merchandised-search-5&pf_rd_r=FBZJ5KXMBFGSPSMRSF74&pf_rd_t=101&pf_rd_p=272bc66a-8b3e-4f50-afb7-e13b5647cb55&pf_rd_i=1048188";
-		String url2 = "https://www.amazon.com/Joes-Jeans-Womens-Midrise-Skinny/dp/B01N9M6FZ1/ref=pd_sbs_193_3?_encoding=UTF8&pd_rd_i=B01N9M6FZ1&pd_rd_r=1PHZZECB5W2BE2J858KT&pd_rd_w=fa9xe&pd_rd_wg=b5mFt&psc=1&refRID=1PHZZECB5W2BE2J858KT";
+		//String url = "https://www.amazon.com/gp/search/ref=sr_nr_p_n_feature_three_br_1/ref=s9_acss_bw_cts_wdnmvd1_T1_w?fst=as:off&rh=n:7141123011,n:7147440011,n:1040660,n:1048188,p_6:ATVPDKIKX0DER,p_n_feature_three_browse-bin:2359303011|2359301011&bbn=1048188&ie=UTF8&qid=1469216114&rnid=2359299011&pf_rd_m=ATVPDKIKX0DER&pf_rd_s=merchandised-search-5&pf_rd_r=FBZJ5KXMBFGSPSMRSF74&pf_rd_t=101&pf_rd_p=272bc66a-8b3e-4f50-afb7-e13b5647cb55&pf_rd_i=1048188";
+		//String url2 = "https://www.amazon.com/Joes-Jeans-Womens-Midrise-Skinny/dp/B01N9M6FZ1/ref=pd_sbs_193_3?_encoding=UTF8&pd_rd_i=B01N9M6FZ1&pd_rd_r=1PHZZECB5W2BE2J858KT&pd_rd_w=fa9xe&pd_rd_wg=b5mFt&psc=1&refRID=1PHZZECB5W2BE2J858KT";
+		String url2 = "https://www.amazon.com/s/ref=lp_7147441011_nr_n_1?fst=as%3Aoff&rh=n%3A7581681011&ie=UTF8&rnid=7581669011";
 		URL newurl2 = new URL(url2);
 		TagNode node = cleaner.clean(newurl2);
 		// String xpath = "/span[@id='productTitle']";
@@ -62,9 +63,11 @@ public class ShopAppTests {
 	@Test
 	public void verifyHref() {
 
-		String url2 = "https://www.amazon.com/gp/search/ref=sr_nr_p_n_feature_three_br_1/ref=s9_acss_bw_cts_wdnmvd1_T1_w?fst=as:off&rh=n:7141123011,n:7147440011,n:1040660,n:1048188,p_6:ATVPDKIKX0DER,p_n_feature_three_browse-bin:2359303011|2359301011&bbn=1048188&ie=UTF8&qid=1469216114&rnid=2359299011&pf_rd_m=ATVPDKIKX0DER&pf_rd_s=merchandised-search-5&pf_rd_r=FBZJ5KXMBFGSPSMRSF74&pf_rd_t=101&pf_rd_p=272bc66a-8b3e-4f50-afb7-e13b5647cb55&pf_rd_i=1048188";
+		//String url2 = "https://www.amazon.com/gp/search/ref=sr_nr_p_n_feature_three_br_1/ref=s9_acss_bw_cts_wdnmvd1_T1_w?fst=as:off&rh=n:7141123011,n:7147440011,n:1040660,n:1048188,p_6:ATVPDKIKX0DER,p_n_feature_three_browse-bin:2359303011|2359301011&bbn=1048188&ie=UTF8&qid=1469216114&rnid=2359299011&pf_rd_m=ATVPDKIKX0DER&pf_rd_s=merchandised-search-5&pf_rd_r=FBZJ5KXMBFGSPSMRSF74&pf_rd_t=101&pf_rd_p=272bc66a-8b3e-4f50-afb7-e13b5647cb55&pf_rd_i=1048188";
 		//String url = "https://www.amazon.cn/s/ref=lp_2152154051_nr_n_0?fst=as:off&rh=n:2016156051,n:!2016157051,n:2152154051,n:2154351051&bbn=2152154051&ie=UTF8&qid=1486696778&rnid=2152154051";
 		//String url3 = "https://www.amazon.com/b/ref=s9_acss_bw_cts__T1_w?node=15711392011&lo=fashion&sort=date-desc-rank&pf_rd_m=ATVPDKIKX0DER&pf_rd_s=merchandised-search-5&pf_rd_r=8NGCDGH4SY7B7WC9GYDQ&pf_rd_t=101&pf_rd_p=17b1667e-6438-4ab2-b664-347119cb800a&pf_rd_i=1045024";
+		
+		String url2 = "https://www.amazon.com/b/ref=sv_sl_fl_9539743011?ie=UTF8&node=9539743011";
 
 		HtmlCleaner cleaner = new HtmlCleaner();
 		TagNode root = null;
