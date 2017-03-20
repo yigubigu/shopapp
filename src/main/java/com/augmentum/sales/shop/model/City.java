@@ -19,13 +19,16 @@ public class City {
 
 	private Double[] temperature;
 	
+	private static double DEFAULT_LATITUDE = 34.052234;
+	private static double  COEFFICIENT = 1;
+			
 	// city location http://www.latlong.net/
-
 	
 	private static double calcF(double c) {
 
 		return (double) Math.round((9 * c / 5 + 32) * 100) / 100;
 	}
+	
 
 	public Double[] getTemperature() {
 		return temperature;
@@ -82,17 +85,36 @@ public class City {
 		return gson.toJson(object);
 	}
 
+	public static Double[] getTemp(double latitude) {
+		//34.052234
+		//13.2,13.9,15.2,16.6,18.2,20.0,22.8,22.9,22.2,19.7,17.1,14.6
+		
+		double[] fixed = {calcF(13.2), calcF(13.9),calcF(15.2),calcF(16.6),
+				calcF(18.2),calcF(20.0),calcF(22.8),calcF(22.9),calcF(22.2),calcF(19.7),calcF(17.1),calcF(14.6)};	
+		
+		double delta = latitude - DEFAULT_LATITUDE;
+		
+		Double[] newVal = new Double[fixed.length];
+		for (int i=0 ; i < newVal.length; i++) {
+			newVal[i] = fixed[i] * COEFFICIENT;
+		}
+		
+		
+		
+		return newVal;
+	}	
+	
+	
+	
 	public static City buildCity(String cityString) {
 		if (StringUtils.isEmpty( cityString)) {
 			return null;
 		}
 		// Aguanga,7.75%,Riverside
 		City city = new City();
-
-		System.out.println(cityString);
 		
 		String[] strs = cityString.split(",");
-		if (strs.length == 17) {
+		if (strs.length == 3) {
 			city.setName(strs[0]);
 			try {
 				String rate = strs[1].substring(0, strs[1].length() - 1);

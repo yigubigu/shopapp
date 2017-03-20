@@ -61,7 +61,8 @@ public class StoreBuilder {
 
 	public static List<City> buildCities() throws IOException {
 		List<City> cities = new ArrayList<City>();
-		File file = new File("city-rate.csv");
+		//
+		File file = new File("Jan2017_City_Rates.csv");
 		List<String> lines = FileUtils.readLines(file, "UTF-8");
 
 		lines.forEach(item -> {
